@@ -1,3 +1,7 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Yatra+One&display=swap');
+
 /* Basic styling */
 * {
 	margin: 0;
@@ -5,18 +9,27 @@
 	box-sizing: border-box;
 }
 
-/* Intro section */
+body {
+	display: grid;
+}
 
-section:nth-child(1) {
-	display: flex;
+/* Header */
+header h1 {
+	font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka,
+		'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	font-size: 80px;
+	text-align: center;
+}
+
+/* Circle component */
+main > section:nth-child(1) {
 	width: 100%;
 	height: 50em;
+	display: flex;
 	justify-content: center;
-	align-items: center;
 }
 
 section span:first-child {
-	position: relative;
 	width: 30em;
 	height: 30em;
 	border-radius: 50%;
@@ -24,8 +37,10 @@ section span:first-child {
 	display: block;
 	animation: clipRotate 15s infinite;
 	animation-delay: 1s;
+	filter: hue-rotate(20deg);
 }
 
+/* Chopsticks component */
 section span:first-child::before {
 	content: '';
 	width: 5em;
@@ -48,6 +63,43 @@ section span:first-child::after {
 	transform: rotate(5deg);
 }
 
+/* Card component */
+article section:nth-child(1) {
+	display: inline-block;
+	background-image: radial-gradient(circle 300px, red 20%, transparent 20%),
+		repeating-conic-gradient(
+			red 30deg,
+			white 30deg,
+			white 40deg,
+			red 40deg,
+			red 50deg
+		);
+}
+
+h2 {
+	border: 1px solid black;
+	border-bottom: none;
+	width: 433px;
+	text-align: center;
+	padding: 2em;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+td {
+	border-bottom: 1px solid black;
+	padding: 1em 0.5em 1em 0.5em;
+}
+
+tr td:nth-child(3) {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 13px;
+}
+
+/* Circle animation */
 @keyframes clipRotate {
 	50% {
 		transform: rotate(30deg);
