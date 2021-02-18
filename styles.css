@@ -10,7 +10,17 @@
 }
 
 body {
-	display: grid;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+:root {
+	--white: #ffffff;
+}
+
+main section:nth-child(2) {
+	margin: 3em;
 }
 
 /* Header */
@@ -21,7 +31,77 @@ header h1 {
 	text-align: center;
 }
 
-/* Circle component */
+/* Mountain */
+section:nth-child(1) {
+	background: rgb(114, 179, 255);
+	background: linear-gradient(
+		180deg,
+		rgba(114, 179, 255, 1) 16%,
+		rgba(140, 194, 250, 1) 47%,
+		rgba(250, 250, 250, 1) 99%
+	);
+}
+
+section:nth-child(1) span:nth-child(2) {
+	display: block;
+	width: 50em;
+	height: 50em;
+	border-left: 700px solid transparent;
+	border-right: 700px solid transparent;
+	border-bottom: 550px solid black;
+	filter: opacity(80%);
+}
+
+section:nth-child(1) span:nth-child(2)::after {
+	position: absolute;
+	top: 250px;
+	left: -128px;
+	content: '';
+	display: block;
+	width: 3.45em;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 100px solid white;
+}
+
+/* Cloud */
+section:nth-child(1) span:nth-child(3) {
+	position: absolute;
+	top: 410px;
+	left: 50px;
+	width: 300px;
+	height: 100px;
+	background: #eceff1;
+	border-radius: 100px;
+	animation: cloud 2s ease-in infinite alternate;
+	animation-delay: 3s;
+}
+
+section:nth-child(1) span:nth-child(3)::after,
+section:nth-child(1) span:nth-child(3)::before {
+	content: '';
+	position: relative;
+	display: inline-block;
+	background: inherit;
+	border-radius: inherit;
+}
+
+section:nth-child(1) span:nth-child(3)::after {
+	width: 50px;
+	height: 50px;
+	top: -140px;
+	left: -30px;
+}
+
+section:nth-child(1) span:nth-child(3)::before {
+	width: 120px;
+	height: 160px;
+	top: -70px;
+	left: 130px;
+}
+
+/* Sun */
 main > section:nth-child(1) {
 	width: 100%;
 	height: 50em;
@@ -30,43 +110,24 @@ main > section:nth-child(1) {
 }
 
 section span:first-child {
-	width: 30em;
-	height: 30em;
+	position: absolute;
+	top: 700px;
+	left: 850px;
+	width: 12em;
+	height: 12em;
 	border-radius: 50%;
 	background-color: red;
 	display: block;
-	animation: clipRotate 15s infinite;
+	animation: sunRising 3s linear;
+	animation-fill-mode: forwards;
 	animation-delay: 1s;
 	filter: hue-rotate(20deg);
-}
-
-/* Chopsticks component */
-section span:first-child::before {
-	content: '';
-	width: 5em;
-	height: 32em;
-	background-color: black;
-	clip-path: polygon(84% 100%, 54% 100%, 56% 0%, 60% 0);
-	position: absolute;
-	left: 320px;
-	transform: rotate(-5deg);
-}
-
-section span:first-child::after {
-	content: '';
-	width: 5em;
-	height: 32em;
-	background-color: black;
-	clip-path: polygon(84% 100%, 54% 100%, 56% 0%, 60% 0);
-	position: absolute;
-	left: 280px;
-	transform: rotate(5deg);
 }
 
 /* Card component */
 article section:nth-child(1) {
 	display: inline-block;
-	background-image: radial-gradient(circle 300px, red 20%, transparent 20%),
+	background-image: radial-gradient(circle 360px, red 20%, transparent 20%),
 		repeating-conic-gradient(
 			red 30deg,
 			white 30deg,
@@ -74,6 +135,7 @@ article section:nth-child(1) {
 			red 40deg,
 			red 50deg
 		);
+	filter: hue-rotate(20deg);
 }
 
 h2 {
@@ -82,6 +144,9 @@ h2 {
 	width: 433px;
 	text-align: center;
 	padding: 2em;
+	font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka,
+		'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	font-size: 32px;
 }
 
 table {
@@ -106,5 +171,23 @@ tr td:nth-child(3) {
 	}
 	100% {
 		transform: rotate(0deg);
+	}
+}
+
+@keyframes cloud {
+	0% {
+		left: 50px;
+	}
+	100% {
+		left: 75px;
+	}
+}
+
+@keyframes sunRising {
+	0% {
+		bottom: 0%;
+	}
+	100% {
+		top: 30%;
 	}
 }
