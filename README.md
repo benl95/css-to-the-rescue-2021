@@ -34,7 +34,7 @@ for a design. I knew I already wanted to do something with Japanese food and
 eventually I chose a few ramen menus/posters to base my design off and try to
 recreate certain things I saw in CSS.
 
--  [https://nl.pinterest.com/benlangenberg987/door-mij-bewaard/](Pinterest
+-  [https://nl.pinterest.com/benlangenberg987/door-mij-bewaard](Pinterest
    inspiration board)
 
 The next day I started experimenting with `clip-path` to create different
