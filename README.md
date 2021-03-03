@@ -5,6 +5,8 @@
 For the assignment I'm creating an interactive restaurant menu for a ramen shop.
 The menu has an interactive cover with animations in a japanese theme.
 
+- [Live version](https://ramen-shop-css.netlify.app/)
+
 # CSS Techniques used:
 
 -  Flexbox
