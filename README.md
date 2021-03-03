@@ -34,8 +34,7 @@ for a design. I knew I already wanted to do something with Japanese food and
 eventually I chose a few ramen menus/posters to base my design off and try to
 recreate certain things I saw in CSS.
 
--  [https://nl.pinterest.com/benlangenberg987/door-mij-bewaard](Pinterest
-   inspiration board)
+-  [Pinterest inspiration board](https://nl.pinterest.com/benlangenberg987/door-mij-bewaard)
 
 The next day I started experimenting with `clip-path` to create different
 shapes. Using clip-path I managed to create a ramen bowl with chopsticks on top.
@@ -83,4 +82,4 @@ line that resembles a noodle strand.
 
 The final version looks as follows:
 
-<img width="396" alt="Schermafbeelding 2021-02-28 om 14 31 31" src="https://user-images.githubusercontent.com/43675725/109825861-88342c00-7c3a-11eb-90e2-3c53c76a5686.png">
+![A-template-for-a-responsive-restaurant-menu](https://user-images.githubusercontent.com/43675725/109826216-dc3f1080-7c3a-11eb-976e-924ebb10f871.png)
