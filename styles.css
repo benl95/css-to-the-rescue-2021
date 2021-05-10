@@ -1,7 +1,6 @@
-/* Font imports */
+/* Import fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Yatra+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 /* Basic styling */
 
@@ -11,396 +10,65 @@
 	box-sizing: border-box;
 }
 
-body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+/* Variables */
+
+:root {
+	--red: #ff0001;
+	--black: #000000;
+	--max-width: 1024px;
+	--h2-font-size: clamp(1rem, 10vw, 2rem);
+	--article-spacing: 0.5rem 0 0.5rem 0;
+	--text-font: 'Montserrat', sans-serif;
+	--header-weight: 600;
+	--border: 1px solid var(--black);
+	--section-padding: 0.6rem;
+	--section-margin: 1rem 0 1rem 0;
 }
 
-/* Header */
+/* Content */
 
-header {
-	display: flex;
-	justify-content: center;
-}
-
-header h1 {
-	font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka,
-		'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-	font-size: 80px;
-	text-align: center;
-	position: absolute;
-	top: 40px;
-	animation: textSlideIn 3s linear forwards;
-	animation-delay: 3s;
-	overflow: hidden;
-	height: 1.3em;
-	width: 0;
-}
-
-/* Mountain */
-section:nth-child(1) {
-	background: linear-gradient(180deg, red 26%, red 27%, black 120%);
-}
-
-section:nth-child(1) span:nth-child(2) {
-	display: block;
-	width: 50em;
-	height: 50em;
-	border-left: 700px solid transparent;
-	border-right: 700px solid transparent;
-	border-bottom: 550px solid black;
-	filter: opacity(100%);
-}
-
-section:nth-child(1) span:nth-child(2)::after {
-	position: absolute;
-	top: 250px;
-	left: -128px;
-	content: '';
-	display: block;
-	width: 3.45em;
-	height: 0;
-	border-left: 100px solid transparent;
-	border-right: 100px solid transparent;
-	border-bottom: 100px solid white;
-}
-
-/* Cloud */
-section:nth-child(1) span:nth-child(3) {
-	position: absolute;
-	top: 410px;
-	left: 50px;
-	width: 300px;
-	height: 100px;
-	background: black;
-	filter: invert(1);
-	border-radius: 100px;
-	animation: cloud 2s ease-in infinite alternate;
-	animation-delay: 1s;
-}
-
-section:nth-child(1) span:nth-child(3)::after,
-section:nth-child(1) span:nth-child(3)::before {
-	content: '';
-	position: relative;
-	display: inline-block;
-	background: inherit;
-	border-radius: inherit;
-}
-
-section:nth-child(1) span:nth-child(3)::after {
-	width: 50px;
-	height: 50px;
-	top: -140px;
-	left: -30px;
-}
-
-section:nth-child(1) span:nth-child(3)::before {
-	width: 120px;
-	height: 160px;
-	top: -70px;
-	left: 130px;
-}
-
-/* Sun */
-
-main > section:nth-child(1) {
-	width: 100%;
-	height: 50em;
-	display: flex;
-	justify-content: center;
-}
-
-section span:first-child {
-	position: absolute;
-	top: 600px;
-	left: 850px;
-	width: 12em;
-	height: 12em;
-	border-radius: 50%;
-	background-color: red;
-	display: block;
-	animation: sunRising 3s linear;
-	animation-fill-mode: forwards;
-	animation-delay: 1s;
-	filter: saturate(80%);
-}
-
-/* Menu */
-main section:nth-child(2) {
+main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-left: 8em;
-	margin-top: 3em;
-	font-family: 'Montserrat', sans-serif;
+	margin: auto;
+	width: 100vw;
+	height: 100vh;
+	max-width: var(--max-width);
+	font-family: var(--text-font);
 }
 
-main section:nth-child(3) {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	margin-left: 8em;
-	font-family: 'Montserrat', sans-serif;
+/* Titles */
+
+h2 {
+	color: var(--red);
+	font-size: var(--h2-font-size);
+	font-weight: var(--header-weight);
 }
 
-main section:nth-child(4) {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	margin-left: 8em;
-	font-family: 'Montserrat', sans-serif;
+h3 {
+	font-weight: var(--header-weight);
 }
 
-main section:nth-child(5) {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	margin-left: 8em;
-	font-family: 'Montserrat', sans-serif;
+/* Sections */
+
+section {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 3fr));
+	gap: 1em;
+	width: clamp(16rem, 90vw, 70rem);
+	border: var(--border);
+	padding: var(--section-padding);
+	border-radius: 3px;
+	margin: var(--section-margin);
 }
 
-/* Ramen noodles */
-main section:nth-child(2) span {
-	display: inline-block;
-	width: 250px;
-	height: 20px;
-	position: relative;
-	bottom: 60px;
-	animation: wavy 1.5s linear infinite;
-	animation-direction: alternate;
+/* Articles */
+
+article * {
+	margin: var(--article-spacing);
 }
 
-main section:nth-child(2) span:before {
-	content: 'loaderloaderloaderloaderloa';
-	text-decoration-line: underline;
-	text-decoration-style: wavy;
-	text-decoration-color: red;
-	text-decoration-thickness: 3px;
-	line-height: 0;
-	word-spacing: 352px;
-	color: transparent;
-}
-
-main section:nth-child(3) span {
-	display: inline-block;
-	width: 250px;
-	height: 20px;
-	position: relative;
-	bottom: 60px;
-}
-
-main section:nth-child(3) span:before {
-	content: 'loaderloaderloaderloaderloa';
-	text-decoration-line: underline;
-	text-decoration-style: wavy;
-	text-decoration-color: red;
-	text-decoration-thickness: 3px;
-	line-height: 0;
-	word-spacing: 352px;
-	color: transparent;
-}
-
-main section:nth-child(4) span {
-	display: inline-block;
-	width: 250px;
-	height: 20px;
-	position: relative;
-	bottom: 60px;
-	animation: wavy 1.5s linear infinite;
-	animation-direction: alternate;
-}
-
-main section:nth-child(4) span:before {
-	content: 'loaderloaderloaderloaderloa';
-	text-decoration-line: underline;
-	text-decoration-style: wavy;
-	text-decoration-color: red;
-	text-decoration-thickness: 3px;
-	line-height: 0;
-	word-spacing: 352px;
-	color: transparent;
-}
-
-main section:nth-child(5) span {
-	display: inline-block;
-	width: 250px;
-	height: 20px;
-	position: relative;
-	bottom: 60px;
-}
-
-main section:nth-child(5) span:before {
-	content: 'loaderloaderloaderloaderloa';
-	text-decoration-line: underline;
-	text-decoration-style: wavy;
-	text-decoration-color: red;
-	text-decoration-thickness: 3px;
-	line-height: 0;
-	word-spacing: 352px;
-	color: transparent;
-}
-
-/* Ramen */
-main section:nth-child(2) > article {
-	display: flex;
-	flex-wrap: wrap;
-	margin-bottom: 1.5em;
-	width: 30em;
-}
-
-main section:nth-child(2) > article div {
-	font-size: 1.3em;
-	width: 50px;
-	margin-left: 2em;
-}
-
-main section:nth-child(2) article p {
-	max-width: 200px;
-}
-
-main section:nth-child(2) > article h3 {
-	width: 50%;
-	font-size: 1.3em;
-}
-
-main section:nth-child(2) h1 {
-	margin-bottom: 1em;
-	align-self: center;
-	margin-left: 4em;
-	margin-right: 20.5em;
-	color: red;
-}
-
-/* Toppings */
-
-main section:nth-child(3) > article {
-	display: flex;
-	flex-wrap: wrap;
-	margin-bottom: 1.5em;
-	width: 30em;
-}
-
-main section:nth-child(3) > article div {
-	font-size: 1.3em;
-	width: 50px;
-	margin-left: 2em;
-}
-
-main section:nth-child(3) article p {
-	max-width: 200px;
-}
-
-main section:nth-child(3) > article h3 {
-	width: 50%;
-	font-size: 1.3em;
-}
-
-main section:nth-child(3) h1 {
-	margin-bottom: 1em;
-	align-self: center;
-	margin-right: 16em;
-	color: red;
-}
-
-/* Side dishes */
-
-main section:nth-child(4) > article {
-	display: flex;
-	flex-wrap: wrap;
-	margin-bottom: 1.5em;
-	width: 30em;
-}
-
-main section:nth-child(4) > article div {
-	font-size: 1.3em;
-	width: 50px;
-	margin-left: 2em;
-}
-
-main section:nth-child(4) article p {
-	max-width: 200px;
-}
-
-main section:nth-child(4) > article h3 {
-	width: 50%;
-	font-size: 1.3em;
-}
-
-main section:nth-child(4) h1 {
-	margin-bottom: 1em;
-	align-self: center;
-	margin-left: 4em;
-	margin-right: 21.5em;
-	color: red;
-}
-
-/* Drinks */
-
-main section:nth-child(5) > article {
-	display: flex;
-	flex-wrap: wrap;
-	margin-bottom: 1.5em;
-	width: 30em;
-}
-
-main section:nth-child(5) > article div {
-	font-size: 1.3em;
-	width: 50px;
-	margin-left: 2em;
-}
-
-main section:nth-child(5) article p {
-	max-width: 200px;
-}
-
-main section:nth-child(5) > article h3 {
-	width: 50%;
-	font-size: 1.3em;
-}
-
-main section:nth-child(5) h1 {
-	margin-bottom: 1em;
-	align-self: center;
-	margin-left: 4em;
-	margin-right: 21.5em;
-	color: red;
-}
-
-/* Animations */
-@keyframes textSlideIn {
-	from {
-		width: 0em;
-	}
-	to {
-		width: 10em;
-	}
-}
-
-@keyframes cloud {
-	0% {
-		left: 50px;
-	}
-	100% {
-		left: 75px;
-	}
-}
-
-@keyframes sunRising {
-	0% {
-		bottom: 0%;
-	}
-	100% {
-		top: 170px;
-	}
-}
-
-@keyframes wavy {
-	0% {
-		left: 0;
-	}
-	100% {
-		left: -10px;
-	}
+article > div {
+	color: var(--red);
 }
