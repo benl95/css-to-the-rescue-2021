@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-/* Basic styling */
+/* General styling */
 
 * {
 	margin: 0;
@@ -16,7 +16,6 @@ body {
 
 a {
 	text-decoration: none;
-	color: var(--black);
 	color: var(--black);
 	filter: invert(1);
 }
@@ -112,7 +111,7 @@ h3 {
 
 /* Sections */
 
-section {
+main > section {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 	gap: 1em;
@@ -123,7 +122,7 @@ section {
 	margin: var(--base-margin);
 }
 
-section:hover {
+main > section:hover {
 	border: 1px solid var(--red);
 }
 
@@ -150,8 +149,43 @@ article > div {
 }
 
 article:hover {
-	transform: scale(1.1);
+	transform: scale(1.05);
 	text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Mountain */
+
+body > section:first-of-type {
+	display: flex;
+	justify-content: center;
+	background: linear-gradient(180deg, red 26%, red 27%, black 120%);
+	height: 40vh;
+	margin-bottom: 1rem;
+}
+
+section > span:nth-child(2) {
+	display: block;
+	width: 20vw;
+	border-left: 19vh solid transparent;
+	border-right: 19vh solid transparent;
+	border-bottom: 15vh solid var(--black);
+}
+
+/* Sun */
+
+section > span:first-child {
+	position: absolute;
+	top: 20vh;
+	left: 57vw;
+	width: 9em;
+	height: 9em;
+	border-radius: 50%;
+	background-color: red;
+	display: block;
+	animation: sunRising 3s linear;
+	animation-fill-mode: forwards;
+	animation-delay: 1s;
+	filter: saturate(80%);
 }
 
 /* Animations */
@@ -165,6 +199,15 @@ article:hover {
 	}
 }
 
+@keyframes sunRising {
+	from {
+		top: 20vh;
+	}
+	to {
+		top: 10vh;
+	}
+}
+
 /* Contexts */
 
 @media print {
@@ -175,5 +218,10 @@ article:hover {
 	@page {
 		size: auto;
 		margin: 0mm;
+	}
+
+	body > section:first-of-type {
+		height: 100vh;
+		page-break-after: always;
 	}
 }
