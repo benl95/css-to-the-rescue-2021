@@ -43,6 +43,10 @@ html {
 
 /* Navigation */
 
+header:first-child {
+	margin: var(--base-margin);
+}
+
 ul {
 	display: flex;
 	justify-content: center;
@@ -90,7 +94,7 @@ h2::after {
 	position: relative;
 	top: -15px;
 	margin-left: 1rem;
-	content: 'loader';
+	content: 'load';
 	text-decoration-line: underline;
 	text-decoration-style: wavy;
 	text-decoration-color: var(--red);
@@ -119,6 +123,10 @@ section {
 	margin: var(--base-margin);
 }
 
+section:hover {
+	border: 1px solid var(--red);
+}
+
 /* Header */
 
 section > header {
@@ -129,12 +137,21 @@ section > header {
 
 /* Articles */
 
+article {
+	transition: 0.2s ease-in;
+}
+
 article * {
 	margin: var(--article-spacing);
 }
 
 article > div {
 	color: var(--red);
+}
+
+article:hover {
+	transform: scale(1.1);
+	text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 /* Animations */
@@ -148,5 +165,15 @@ article > div {
 	}
 }
 
-@keyframes navigation {
+/* Contexts */
+
+@media print {
+	header {
+		display: none;
+	}
+
+	@page {
+		size: auto;
+		margin: 0mm;
+	}
 }
