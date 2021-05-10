@@ -46,6 +46,22 @@ h2 {
 	font-weight: var(--header-weight);
 }
 
+h2::after {
+	position: relative;
+	top: -15px;
+	margin-left: 1rem;
+	content: 'loader';
+	text-decoration-line: underline;
+	text-decoration-style: wavy;
+	text-decoration-color: var(--red);
+	text-decoration-thickness: 3px;
+	line-height: 0;
+	word-spacing: 352px;
+	color: transparent;
+	animation: wavy 1.5s linear infinite;
+	animation-direction: alternate;
+}
+
 h3 {
 	font-weight: var(--header-weight);
 }
@@ -54,13 +70,21 @@ h3 {
 
 section {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(180px, 3fr));
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 	gap: 1em;
 	width: clamp(16rem, 90vw, 70rem);
 	border: var(--border);
 	padding: var(--section-padding);
 	border-radius: 3px;
 	margin: var(--section-margin);
+}
+
+/* Header */
+
+section > header {
+	grid-row-start: 1;
+	grid-row-end: 4;
+	display: block;
 }
 
 /* Articles */
@@ -71,4 +95,15 @@ article * {
 
 article > div {
 	color: var(--red);
+}
+
+/* Animations */
+
+@keyframes wavy {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: -5px;
+	}
 }
