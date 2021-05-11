@@ -38,6 +38,10 @@ html {
 	--section-padding: 0.6rem;
 	--base-margin: 1rem 0 1rem 0;
 	--nav-margin: 0 1rem 0 1rem;
+	--sun-width: 2rem, 20vw, 6rem;
+	--sun-height: 2rem, 7vh, 8rem;
+	--max-vw: 100vw;
+	--max-vh: 100vh;
 }
 
 /* Navigation */
@@ -49,7 +53,7 @@ header:first-child {
 nav {
 	display: flex;
 	justify-content: center;
-	width: 100vw;
+	width: var(--max-vw);
 }
 
 ul {
@@ -85,8 +89,8 @@ main {
 	flex-direction: column;
 	align-items: center;
 	margin: auto;
-	width: 100vw;
-	height: 100vh;
+	width: var(--max-vw);
+	height: var(--max-vh);
 	max-width: var(--max-width);
 }
 
@@ -162,16 +166,18 @@ article:hover {
 	text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* Mountain */
+/* Gradient background */
 
 body > section:first-of-type {
 	display: flex;
 	justify-content: center;
 	background: linear-gradient(180deg, red 26%, red 27%, black 120%);
 	height: 40vh;
-	width: 100vw;
+	width: var(--max-vw);
 	margin-bottom: 1rem;
 }
+
+/* Mountain */
 
 section > span:nth-child(2) {
 	display: block;
@@ -187,8 +193,8 @@ section > span:first-child {
 	position: absolute;
 	top: 20vh;
 	left: 57vw;
-	width: clamp(2rem, 20vw, 6rem);
-	height: clamp(2rem, 7vh, 8rem);
+	width: clamp(var(--sun-width));
+	height: clamp(var(--sun-height));
 	border-radius: 50%;
 	background-color: red;
 	display: inline-block;
