@@ -209,11 +209,14 @@ section > span:first-child::after {
 	display: block;
 	content: 'ラーメン屋<';
 	position: absolute;
-	top: 8vh;
-	left: -18vw;
+	left: -12vw;
+	top: -5vh;
 	filter: invert(1);
-	font-size: 3rem;
-	width: 19rem;
+	height: 19rem;
+	font-size: clamp(2rem, 5vw, 3rem);
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	font-weight: var(--header-weight);
 }
 
 /* Animations */
