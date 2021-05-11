@@ -46,22 +46,31 @@ header:first-child {
 	margin: var(--base-margin);
 }
 
-ul {
+nav {
 	display: flex;
 	justify-content: center;
 	width: 100vw;
 }
 
+ul {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	justify-items: center;
+	width: 20vw;
+}
+
 li {
 	list-style-type: none;
 	margin: var(--nav-margin);
+	margin-left: 0.5rem;
 	border: 1px solid var(--red);
 	background-color: var(--red);
 	border-radius: 3px;
-	width: 10rem;
+	width: 5rem;
 	text-align: center;
 	padding: var(--section-padding);
 	transition: 0.3s ease-in;
+	margin: var(--base-margin);
 }
 
 li:hover {
@@ -160,13 +169,15 @@ body > section:first-of-type {
 	justify-content: center;
 	background: linear-gradient(180deg, red 26%, red 27%, black 120%);
 	height: 40vh;
+	width: 100vw;
 	margin-bottom: 1rem;
 }
 
 section > span:nth-child(2) {
 	display: block;
-	border-left: max(19vh, min(15vw, 21vh)) solid transparent;
-	border-right: max(19vh, min(15vw, 21vh)) solid transparent;
+	width: 10vw;
+	border-left: max(13vh, min(15vw, 21vh)) solid transparent;
+	border-right: max(13vh, min(15vw, 21vh)) solid transparent;
 	border-bottom: 15vh solid var(--black);
 }
 
@@ -177,7 +188,7 @@ section > span:first-child {
 	top: 20vh;
 	left: 57vw;
 	width: clamp(2rem, 20vw, 6rem);
-	height: clamp(2rem, 10vh, 8rem);
+	height: clamp(2rem, 7vh, 8rem);
 	border-radius: 50%;
 	background-color: red;
 	display: inline-block;
