@@ -235,3 +235,13 @@ section > span:first-child {
 		page-break-after: always;
 	}
 }
+
+@media (prefers-reduced-motion) {
+	h2::after {
+		animation: dissolve;
+	}
+
+	section > span:first-child {
+		animation: dissolve;
+	}
+}
