@@ -155,6 +155,7 @@ article {
 
 article * {
 	margin: var(--article-spacing);
+	font-size: clamp(0.8rem, 5vw, 1rem);
 }
 
 article > div {
@@ -213,7 +214,7 @@ section > span:first-child::after {
 	top: -5vh;
 	filter: invert(1);
 	height: 19rem;
-	font-size: clamp(2rem, 5vw, 3rem);
+	font-size: clamp(2rem, 5vw, 2.5rem);
 	writing-mode: vertical-rl;
 	text-orientation: upright;
 	font-weight: var(--header-weight);
