@@ -177,11 +177,11 @@ section > span:first-child {
 	position: absolute;
 	top: 20vh;
 	left: 57vw;
-	width: 9em;
-	height: 9em;
+	width: clamp(2rem, 20vw, 6rem);
+	height: clamp(2rem, 10vh, 8rem);
 	border-radius: 50%;
 	background-color: red;
-	display: block;
+	display: inline-block;
 	animation: sunRising 3s linear;
 	animation-fill-mode: forwards;
 	animation-delay: 1s;
