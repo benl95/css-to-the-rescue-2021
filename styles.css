@@ -273,4 +273,9 @@ section > span:first-child::after {
 	section > span:first-child {
 		animation: dissolve;
 	}
+
+	section > span:first-child::after {
+		top: -10vh;
+		left: -15vw;
+	}
 }
