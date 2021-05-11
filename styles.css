@@ -46,7 +46,7 @@ html {
 
 /* Navigation */
 
-header:first-child {
+section > header:first-child {
 	margin: var(--base-margin);
 }
 
@@ -168,7 +168,7 @@ article:hover {
 
 /* Gradient background */
 
-body > section:first-of-type {
+header > section:first-of-type {
 	display: flex;
 	justify-content: center;
 	background: linear-gradient(180deg, red 26%, red 27%, black 120%);
@@ -190,18 +190,30 @@ section > span:nth-child(2) {
 /* Sun */
 
 section > span:first-child {
+	display: block;
 	position: absolute;
 	top: 20vh;
 	left: 57vw;
 	width: clamp(var(--sun-width));
 	height: clamp(var(--sun-height));
 	border-radius: 50%;
-	background-color: red;
+	background-color: var(--red);
 	display: inline-block;
-	animation: sunRising 3s linear;
+	animation: sunRising 2s linear;
 	animation-fill-mode: forwards;
-	animation-delay: 1s;
+	animation-delay: 0.3s;
 	filter: saturate(80%);
+}
+
+section > span:first-child::after {
+	display: block;
+	content: 'ラーメン屋<';
+	position: absolute;
+	top: 8vh;
+	left: -18vw;
+	filter: invert(1);
+	font-size: 3rem;
+	width: 19rem;
 }
 
 /* Animations */
