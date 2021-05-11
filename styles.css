@@ -165,9 +165,8 @@ body > section:first-of-type {
 
 section > span:nth-child(2) {
 	display: block;
-	width: 20vw;
-	border-left: 19vh solid transparent;
-	border-right: 19vh solid transparent;
+	border-left: max(19vh, min(15vw, 21vh)) solid transparent;
+	border-right: max(19vh, min(15vw, 21vh)) solid transparent;
 	border-bottom: 15vh solid var(--black);
 }
 
