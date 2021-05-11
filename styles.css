@@ -115,7 +115,7 @@ main > section {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 	gap: 1em;
-	width: clamp(16rem, 90vw, 70rem);
+	width: clamp(16rem, 60vw, 70rem);
 	border: var(--border);
 	padding: var(--section-padding);
 	border-radius: 3px;
